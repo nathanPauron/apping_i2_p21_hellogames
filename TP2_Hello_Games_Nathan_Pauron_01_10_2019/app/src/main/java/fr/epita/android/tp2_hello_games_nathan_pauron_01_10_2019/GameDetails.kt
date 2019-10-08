@@ -9,7 +9,7 @@ class GameDetails{
     val url             : String
     val picture         : String
     val description_fr  : String
-    val desciption_en   : String
+    val description_en   : String
 
     constructor(
         id: Int,
@@ -30,6 +30,6 @@ class GameDetails{
         this.url = url
         this.picture = picture
         this.description_fr = description_fr
-        this.desciption_en = desciption_en
+        this.description_en = desciption_en
     }
 }

@@ -10,5 +10,5 @@ interface WebServiceInterface {
     fun listAllGames(): Call<List<Game>>
 
     @GET("game/details")
-    fun listDetailsForGame(@Query("game_id") game_id: Int): Call<List<GameDetails>>
+    fun listDetailsForGame(@Query("game_id") game_id: Int): Call<GameDetails>
 }
