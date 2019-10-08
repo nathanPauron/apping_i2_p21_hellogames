@@ -1,17 +1,20 @@
 package fr.epita.android.tp2_hello_games_nathan_pauron_01_10_2019
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.webkit.WebStorage
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.google.gson.GsonBuilder
+import kotlinx.android.synthetic.main.activity_game_info.*
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -68,6 +71,16 @@ class GameInfoActivity : AppCompatActivity() {
 
                         val GameDescription_en : TextView = findViewById(R.id.descriptionTextView)
                         GameDescription_en.text = responseData.description_en
+
+                        button.setOnClickListener{
+                            val url = responseData.url
+                            // Define an implicit intent
+                            val implicitIntent = Intent(Intent.ACTION_VIEW)
+                            // Add the required data in the intent (here the URL we want to open)
+                            implicitIntent.data = Uri.parse(url)
+                            // Launch the intent
+                            startActivity(implicitIntent)
+                        }
                     }
                 }
             }
