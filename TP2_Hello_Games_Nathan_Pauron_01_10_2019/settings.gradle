@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name='TP2_Hello_Games_Nathan_Pauron_01_10_2019'
